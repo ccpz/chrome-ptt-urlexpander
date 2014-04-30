@@ -1,7 +1,7 @@
 {
 "name":"ptt.cc image hot linker",
-"description":"Show original image in ptt.cc (currently only images from ppt.cc is supported)",
-"version":"1.0",
+"description":"Show original image or insert iFrame in ptt.cc",
+"version":"1.1",
 "manifest_version":2,
 "permissions": [
     "http://ppt.cc/",
