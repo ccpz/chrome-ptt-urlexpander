@@ -17,7 +17,9 @@ function parse(domLink) {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4) {
 					var resp = xhr.responseText.split(/\s/);
-					if(resp.length>=2 && ValidURL(resp[1])) { //short url from ppt.cc
+					if(resp.length>=2 && ValidURL(resp[1]) && resp[1].indexOf("staticflickr")!=-1) { //static image from flickr
+						insertImage(domLink, resp[1]);
+					} else if(resp.length>=2 && ValidURL(resp[1])) { //short url from ppt.cc
 						insertIFrame(domLink, resp[1]);
 					} else if(resp.length>=2 && resp[1].indexOf("!data/")==0) { //image from ptt.cc
 						insertImage(domLink, url);
