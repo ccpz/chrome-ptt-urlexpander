@@ -1,0 +1,17 @@
+{
+"name":"ptt.cc image hot linker",
+"description":"Show original image in ptt.cc (currently only images from ppt.cc is supported)",
+"version":"1.0",
+"manifest_version":2,
+"permissions": [
+    "http://ppt.cc/",
+	"https://www.googleapis.com/"
+  ],
+"content_scripts": [
+    {
+      "matches": ["http://www.ptt.cc/bbs/*"],
+      "js": ["inject.js"],
+	  "run_at": "document_end"
+    }
+  ]
+}
