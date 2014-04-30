@@ -44,6 +44,8 @@ function parse(domLink) {
 }
 
 function insertIFrame(domLink, url) {
+	if(url.indexOf("flickr.com")!=-1 && url.indexOf("lightbox")!=-1)
+		url = url.replace(/lightbox\/?/,"");
 	if(url.indexOf("flickr.com")!=-1)
 		url = url+"/player";
 	domLink.innerHTML = domLink.innerHTML + "<br><iframe src=\""+url+"\" width=700 height=700></iframe>";
